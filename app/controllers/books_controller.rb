@@ -6,13 +6,13 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     if @book.save
-      flash[:notice] = "投稿に成功しました"
+      flash[:notice] = "successfully"
       redirect_to book_path(@book.id)
     else
       @books = Book.all
       render :index
     end
-  end 
+  end
 
   def index
     @book = Book.new
@@ -26,12 +26,12 @@ class BooksController < ApplicationController
   def edit
     @book = Book.find(params[:id])
   end
-  
+
 def update
   @book = Book.find(params[:id])
- 
+
   if @book.update(book_params)
-    flash[:notice] = "更新に成功しました"
+    flash[:notice] = "successfully"
     redirect_to book_path(@book.id)
   else
     render :edit

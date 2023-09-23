@@ -1,4 +1,4 @@
-<h1>編集画面</h1>
+<h1>Editing Book</h1>
 <% if @book.errors.any? %>
   <%= @book.errors.count %>error
   <ul>
@@ -14,6 +14,9 @@
 <h4>感想</h4>
 <%= f.text_area :body %>
 
-<%= f.submit '保存' %>
-
+<%= f.submit 'Update Book' %>
 <% end %>
+<p><%= @book.body %></p>
+
+<%= link_to "Show", book_path(@book.id) %>
+<a href="/books">Back</a>
